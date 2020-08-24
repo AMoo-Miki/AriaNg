@@ -10,7 +10,7 @@ var saveLicense = require('uglify-save-license');
 var $ = gulpLoadPlugins();
 var reload = browserSync.reload;
 
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['.tmp', 'dist/*.*', '!dist/.htaccess', 'dist/css/*', 'dist/fonts/*', 'dist/js/*', '!dist/js/port.js']));
 
 gulp.task('lint', function () {
     return gulp.src([

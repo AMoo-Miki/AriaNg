@@ -138,8 +138,14 @@
                     }
                 }
 
+                options.rpcPort = window.RPC_PORT || options.rpcPort;
+
                 setOptions(options);
                 fireFirstVisitEvent();
+            } else if (window.RPC_PORT && options.rpcPort !== window.RPC_PORT) {
+                options.rpcPort = window.RPC_PORT;
+                setOptions(options);
+                location.reload();
             }
 
             return options;

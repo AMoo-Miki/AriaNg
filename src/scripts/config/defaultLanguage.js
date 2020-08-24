@@ -6,7 +6,7 @@
             'AriaNg Version': 'AriaNg Version',
             'Operation Result': 'Operation Result',
             'Operation Succeeded': 'Operation Succeeded',
-            '{{name}} is connected': '{{name}} is connected',
+            'is connected': 'is connected',
             'Error': 'Error',
             'OK': 'OK',
             'Confirm': 'Confirm',
@@ -182,6 +182,8 @@
             'Navigate to Downloading Tasks Page': 'Navigate to Downloading Tasks Page',
             'Stay on Current Page': 'Stay on Current Page',
             'Remove Old Tasks After Retrying': 'Remove Old Tasks After Retrying',
+            'Confirm Task Removal': 'Confirm Task Removal',
+            'Include Prefix When Copying From Task Details': 'Include Prefix When Copying From Task Details',
             'RPC List Display Order': 'RPC List Display Order',
             'Recently Used': 'Recently Used',
             'RPC Alias': 'RPC Alias',
@@ -200,8 +202,10 @@
             'Waiting Count': 'Waiting Count',
             'Stopped Count': 'Stopped Count',
             'You have disabled notification in your browser. You should change your browser\'s settings before you enable this function.': 'You have disabled notification in your browser. You should change your browser\'s settings before you enable this function.',
+            'Application cache has been updated, please reload the page for the changes to take effect.': 'Application cache has been updated, please reload the page for the changes to take effect.',
+            'Language resource has been updated, please reload the page for the changes to take effect.': 'Language resource has been updated, please reload the page for the changes to take effect.',
             'Configuration has been modified, please reload the page for the changes to take effect.': 'Configuration has been modified, please reload the page for the changes to take effect.',
-            'Reload Page': 'Reload Page',
+            'Reload AriaNg': 'Reload AriaNg',
             'Show Secret': 'Show Secret',
             'Hide Secret': 'Hide Secret',
             'Aria2 Version': 'Aria2 Version',
@@ -233,6 +237,7 @@
             'Http and WebSocket would be disabled when accessing AriaNg via Https.': 'Http and WebSocket would be disabled when accessing AriaNg via Https.',
             'POST': 'POST',
             'GET': 'GET',
+            'Enabled': 'Enabled',
             'Disabled': 'Disabled',
             'BitTorrent': 'BitTorrent',
             'Changes to the settings take effect after refreshing page.': 'Changes to the settings take effect after refreshing page.',
@@ -285,6 +290,9 @@
                 'server.overload': 'The remote server was unable to handle the request due to a temporary overloading or maintenance.',
                 'rpc.request.parse.failed': 'Failed to parse JSON-RPC request.',
                 'checksum.failed': 'Checksum validation failed.'
+            },
+            'languages': {
+                'English': 'English'
             },
             'format': {
                 'longdate': 'MM/DD/YYYY HH:mm:ss',

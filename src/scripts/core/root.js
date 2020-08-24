@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('ariaNg').run(['$rootScope', '$location', '$document', 'ariaNgCommonService', 'ariaNgLocalizationService', 'ariaNgLogService', 'ariaNgSettingService', 'aria2TaskService', function ($rootScope, $location, $document, ariaNgCommonService, ariaNgLocalizationService, ariaNgLogService, ariaNgSettingService, aria2TaskService) {
+    angular.module('ariaNg').run(['$window', '$rootScope', '$location', '$document', 'ariaNgCommonService', 'ariaNgLocalizationService', 'ariaNgLogService', 'ariaNgSettingService', 'aria2TaskService', function ($window, $rootScope, $location, $document, ariaNgCommonService, ariaNgLocalizationService, ariaNgLogService, ariaNgSettingService, aria2TaskService) {
         var isUrlMatchUrl2 = function (url, url2) {
             if (url === url2) {
                 return true;
@@ -324,6 +324,18 @@
             }
         };
 
+        $rootScope.refreshPage = function () {
+            $window.location.reload();
+        };
+
+        ariaNgSettingService.onApplicationCacheUpdated(function () {
+            ariaNgLocalizationService.notifyInPage('', 'Application cache has been updated, please reload the page for the changes to take effect.', {
+                delay: false,
+                type: 'info',
+                templateUrl: 'views/notification-reloadable.html'
+            });
+        });
+
         ariaNgSettingService.onFirstAccess(function () {
             ariaNgLocalizationService.notifyInPage('', 'Tap to configure and get started with AriaNg.', {
                 delay: false,
@@ -334,11 +346,9 @@
         });
 
         aria2TaskService.onFirstSuccess(function (event) {
-            ariaNgLocalizationService.notifyInPage('', '{{name}} is connected', {
+            ariaNgLocalizationService.notifyInPage('', 'is connected', {
                 type: 'success',
-                contentParams: {
-                    name: event.rpcName
-                }
+                contentPrefix: event.rpcName + ' '
             });
         });
 

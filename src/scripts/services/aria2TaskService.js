@@ -20,7 +20,14 @@
                 return path;
             }
 
-            return path.substring(index + 1);
+            var fileNameAndQueryString = path.substring(index + 1);
+            var queryStringStartPos = fileNameAndQueryString.indexOf('?');
+
+            if (queryStringStartPos <= 0) {
+                return fileNameAndQueryString;
+            }
+
+            return fileNameAndQueryString.substring(0, queryStringStartPos);
         };
 
         var calculateDownloadRemainTime = function (remainBytes, downloadSpeed) {
@@ -376,8 +383,8 @@
 
             for (var i = 0; i < peers.length; i++) {
                 var peer = peers[i];
-                var upstreamToSpeed = peer.uploadSpeed;
-                var downstreamFromSpeed = peer.downloadSpeed;
+                var upstreamToSpeed = parseInt(peer.uploadSpeed);
+                var downstreamFromSpeed = parseInt(peer.downloadSpeed);
                 var completedPieces = getPieceStatus(peer.bitfield, task.numPieces);
                 var completedPieceCount = ariaNgCommonService.countArray(completedPieces, true);
 
